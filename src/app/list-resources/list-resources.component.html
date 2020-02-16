@@ -1,0 +1,25 @@
+
+<div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Year</th>
+                <th scope="col">Color preview</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let r of resources">
+                <th scope="row">{{ r.id }}</th>
+                <td>{{r.name}}</td>
+                <td>{{r.year}}</td>
+                <td >{{r.color}}</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+    <div class="col-lg-2"></div>
+</div>

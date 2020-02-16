@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+        <form [formGroup]="loginForm" (ngSubmit)="sendForm()">
+            <div class="alert alert-danger" *ngIf="error">
+                {{error}}
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" formControlName="email">
+            </div>
+            <div  *ngIf="email.touched && email.errors">
+                <div class="alert alert-danger" *ngIf="email.errors?.required">
+                    This field is required
+                </div>
+                <div class="alert alert-danger" *ngIf="email.errors?.pattern">
+                    Invalid email
+                </div>
+            </div>
+           
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" formControlName="password">
+            </div>
+            <div class="alert alert-danger" *ngIf="password.touched && password.errors?.required">
+                This field is required
+            </div>
+
+            <button [disabled]="!loginForm.valid" type="submit" class="btn btn-primary">Submit</button>
+          </form>
+         
+    </div>
+    <div class="col-lg-4"></div>
+</div>
+<div class="row">Do not have an account? <a routerLink="/register">Register</a></div>
