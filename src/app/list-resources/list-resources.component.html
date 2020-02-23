@@ -12,7 +12,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let r of resources">
+              <tr *ngFor="let r of resources" appHover>
                 <th scope="row">{{ r.id }}</th>
                 <td>{{r.name}}</td>
                 <td>{{r.year}}</td>
